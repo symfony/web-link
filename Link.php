@@ -133,6 +133,8 @@ class Link implements EvolvableLinkInterface
     /**
      * {@inheritdoc}
      *
+     * @param string|true $value
+     *   The value of the attribute to set.
      * @return static
      */
     public function withAttribute($attribute, $value)
