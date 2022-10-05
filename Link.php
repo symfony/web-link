@@ -34,6 +34,12 @@ class Link implements EvolvableLinkInterface
     public const REL_PRECONNECT = 'preconnect';
     public const REL_PREFETCH = 'prefetch';
     public const REL_PRERENDER = 'prerender';
+    
+    // Relations defined in https://www.rfc-editor.org/rfc/rfc8631
+    public const REL_SERVICE_DOC = 'service-doc';
+    public const REL_SERVICE_DESC = 'service-desc';
+    public const REL_SERVICE_META = 'service-meta';
+    public const REL_STATUS = 'status';
 
     // Extra relations
     public const REL_MERCURE = 'mercure';
