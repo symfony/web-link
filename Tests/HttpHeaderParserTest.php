@@ -23,7 +23,7 @@ class HttpHeaderParserTest extends TestCase
 
         $header = [
             '</1>; rel="prerender",</2>; rel="dns-prefetch"; pr="0.7",</3>; rel="preload"; as="script"',
-            '</4>; rel="preload"; as="image"; nopush,</5>; rel="alternate next"; hreflang="fr"; hreflang="de"; title="Hello"'
+            '</4>; rel="preload"; as="image"; nopush,</5>; rel="alternate next"; hreflang="fr"; hreflang="de"; title="Hello"',
         ];
         $provider = $parser->parse($header);
         $links = $provider->getLinks();

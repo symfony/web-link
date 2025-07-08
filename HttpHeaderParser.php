@@ -33,7 +33,7 @@ class HttpHeaderParser
      */
     public function parse(string|array $headers): EvolvableLinkProviderInterface
     {
-        if (is_array($headers)) {
+        if (\is_array($headers)) {
             $headers = implode(', ', $headers);
         }
         $links = new GenericLinkProvider();
@@ -59,10 +59,10 @@ class HttpHeaderParser
                         default => true,
                     };
 
-                    if ($key === 'rel') {
+                    if ('rel' === $key) {
                         // Only the first occurrence of the "rel" attribute is read
-                        $rels ??= $value === true ? [] : preg_split('/\s+/', $value, 0, \PREG_SPLIT_NO_EMPTY);
-                    } elseif (is_array($attributes[$key] ?? null)) {
+                        $rels ??= true === $value ? [] : preg_split('/\s+/', $value, 0, \PREG_SPLIT_NO_EMPTY);
+                    } elseif (\is_array($attributes[$key] ?? null)) {
                         $attributes[$key][] = $value;
                     } elseif (isset($attributes[$key])) {
                         $attributes[$key] = [$attributes[$key], $value];
