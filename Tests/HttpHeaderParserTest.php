@@ -58,7 +58,6 @@ class HttpHeaderParserTest extends TestCase
         self::assertCount(0, $provider->getLinks());
     }
 
-    /** @dataProvider provideHeaderParsingCases */
     #[DataProvider('provideHeaderParsingCases')]
     public function testParseVariousAttributes(string $header, array $expectedRels, array $expectedAttributes)
     {
