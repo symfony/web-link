@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\WebLink\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\WebLink\Link;
 
@@ -69,9 +70,7 @@ class LinkTest extends TestCase
         $this->assertContains('next', $link->getRels());
     }
 
-    /**
-     * @dataProvider templatedHrefProvider
-     */
+    #[DataProvider('templatedHrefProvider')]
     public function testTemplated(string $href)
     {
         $link = (new Link())
@@ -80,9 +79,7 @@ class LinkTest extends TestCase
         $this->assertTrue($link->isTemplated());
     }
 
-    /**
-     * @dataProvider notTemplatedHrefProvider
-     */
+    #[DataProvider('notTemplatedHrefProvider')]
     public function testNotTemplated(string $href)
     {
         $link = (new Link())
